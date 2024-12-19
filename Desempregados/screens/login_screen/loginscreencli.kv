@@ -1,0 +1,63 @@
+<LoginScreenCli>
+    MDFloatLayout:
+        padding: 5
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        MDRelativeLayout:
+            MDIconButton:
+                icon: "chevron-left"
+                halign: "left"
+                size_hint: None, None
+                size: "50dp", "50dp"
+                pos_hint: {"center_x": 0.07, "center_y": 0.97}
+                on_release: app.root.ChooseScreen()
+
+        MDLabel:
+            text: "Torna-te um \nFuncionário \nAgora."
+            halign: "left"
+            bold: True
+            font_size: "44"
+            pos_hint: {"center_x": 0.55, "center_y": 0.8}
+
+        MDTextField: 
+            hint_text: "Email"
+            mode: "rectangle"
+            icon_right: "email"
+            pos_hint: {"center_x": 0.5, "center_y": 0.6}
+            size_hint: 0.9, None
+            height: 50
+
+        MDTextField: 
+            hint_text: "Palavra-passe"
+            mode: "rectangle"
+            text_color: app.theme_cls.primary_color 
+            icon_right: "lock"
+            pos_hint: {"center_x": 0.5, "center_y": 0.49}
+            size_hint: 0.9, None
+            height: 50
+            fill_color: 1, 1, 1, 1
+            text_color: 0, 0, 0, 1
+
+        MDFillRoundFlatButton:
+            text: "Entrar"
+            elavation: 1
+            text_color: "black"
+            size_hint: 0.9, None
+            pos_hint: {"center_x": 0.5, "center_y": 0.38}
+
+        MDLabel:
+            text: " Entrar com conta Google"
+            halign: "center"
+            font_size: "16"
+            pos_hint: {"center_x": 0.5, "center_y": 0.30}
+
+        MDRectangleFlatIconButton:
+            text: "Google"
+            icon: "google" 
+            pos_hint: {"center_x": 0.5, "center_y": 0.23}
+            md_bg_color: 1, 1, 1, 1 
+            text_color: 0.2, 0.2, 0.2, 1
+            icon_color: "black"

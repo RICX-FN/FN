@@ -1,0 +1,114 @@
+<ChooseScreen>:
+    canvas.before:
+        Color:
+            rgba: 0, 0.7, 0.5, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 20
+
+        Label:
+            text: "Escolha\nO que pretende\nSer."
+            font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Bold.ttf"
+            font_size: 48
+            halign: "left"
+            valign: "top"
+            text_size: self.width, None
+            size_hint_y: 0.4
+
+        RelativeLayout:
+            Image:
+                id: img
+                source: 'img\\user.png'
+                size_hint: None, None
+                size: 250, 250
+                pos_hint: {"center_x": 0.5, "center_y": 0.6}
+
+            Label:
+                id: funcao_user
+                text: "Cliente"
+                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Bold.ttf"
+                font_size: 24
+                color: 1, 1, 1, 1
+                pos_hint: {"center_x": 0.5, "center_y": 0.3}
+
+            Button:
+                text: "<"
+                size_hint: None, None
+                size: 250, 250
+                pos_hint: {"center_x": 0.1, "center_y": 0.6}
+                background_normal: ""
+                background_color: 1, 1, 1, 0
+                color: "white"
+                on_release: root.trocar_img()
+
+            Button:
+                text: ">"
+                size_hint: None, None
+                size: 50, 50
+                pos_hint: {"center_x": 0.9, "center_y": 0.6}
+                background_normal: ""
+                background_color: 1, 1, 1, 0
+                color: "white"
+                on_release: root.voltar_img()
+
+            Button:
+                text: "seguinte"
+                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Bold.ttf"
+                size_hint: None, None
+                size: 100, 45
+                pos_hint: {"center_x": 0.5}
+                background_normal: ""
+                background_color: 0, 0, 0, 0
+                color: 0, 0, 0, 1
+                canvas.before:
+                    Color:
+                        rgba: 1, 1, 1, 1
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]  
+                on_release: app.root.current = "Login"
+                
+
+<TelaLoginCli>:
+    canvas.before:
+        Color:
+            rgba: 0, 0.7, 0.5, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 20
+
+        MDToolbar:
+            pos_hint: {'top': 1}
+
+        Label:
+            text: "Faça Login\nComo Cliente"
+
+        Button:
+            text:"voltar"
+            font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Bold.ttf"
+            size_hint: None, None
+            size: 100, 45
+            pos_hint: {"center_x": 0.5}
+            background_normal: ""
+            background_color: 0, 0, 0, 0
+            color: 0, 0, 0, 1
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]  
+            on_release: app.root.current = "main"
+

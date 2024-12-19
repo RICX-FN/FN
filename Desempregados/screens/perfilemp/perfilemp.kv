@@ -1,0 +1,66 @@
+<PerfilEmp>
+    MDFloatLayout:
+        padding: 5
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        MDRelativeLayout:
+            MDIconButton:
+                icon: "chevron-left"
+                halign: "left"
+                size_hint: None, None
+                size: "50dp", "50dp"
+                pos_hint: {"center_x": 0.07, "center_y": 0.97}
+                on_release: root.back_login_emp()
+
+            MDLabel:
+                id: NomeEmpresa
+                text: "Desempregados"
+               # halign: "left"
+                font_size: 22
+                bold: True
+                pos_hint: {"center_x": 0.95, "center_y": 0.9}
+
+            MDLabel:
+                id: NumeroEmpresa
+                text: "929355954"
+               # halign: "left"
+                font_size: 16
+                bold: False
+                pos_hint: {"center_x": 0.95, "center_y": 0.86}
+
+            MDLabel:
+                id: Cidade
+                text: "Angola / Luanda"
+               # halign: "left"
+                font_size: 16
+                bold: False
+                pos_hint: {"center_x": 0.95, "center_y": 0.83}
+
+            MDLabel:
+                id: Area
+                text: "Area de TI"
+               # halign: "left"
+                font_size: 16
+                bold: False
+                pos_hint: {"center_x": 0.95, "center_y": 0.80}
+
+            MDLabel:
+                id: EmailEmpresa
+                text: "Desempregados@gmail.com"
+               # halign: "left"
+                font_size: 16
+                bold: False
+                pos_hint: {"center_x": 0.95, "center_y": 0.77}
+
+            MDFillRoundFlatButton:
+                text: "Editar perfil"
+                font_size: "20"
+                elavation: 1
+                text_color: "black"
+                size_hint: 0.9, 0
+                pos_hint: {"center_x": 0.5, "center_y": 0.7}
+                on_release: #root.opc_edit_perfil()
+

@@ -1,0 +1,62 @@
+<ChooseScreen>:
+    MDFloatLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: 20
+            spacing: 20
+
+            MDLabel:
+                text: "Escolha\nO que pretende\nSer."
+                font_name: "fonts/Kanit_PT_Serif_Roboto/Roboto/Roboto-Bold.ttf"
+                font_size: "44"
+                halign: "left"
+                size_hint_y: 0.5
+
+            MDRelativeLayout:
+                FitImage:
+                    id: img
+                    source: "img/trabalhador.png"
+                    size_hint: None, None
+                    size: dp(150), dp(150)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.7}
+
+                MDIconButton:
+                    icon: "chevron-left"
+                    size_hint: None, None
+                    size: "50dp", "50dp"
+                    pos_hint: {"center_x": 0.1, "center_y": 0.7}
+                    on_release: root.trocar_img()
+
+                MDIconButton:
+                    icon: "chevron-right"
+                    size_hint: None, None
+                    size: "50dp", "50dp"
+                    pos_hint: {"center_x": 0.9, "center_y": 0.7}
+                    on_release: root.voltar_img()
+
+                MDLabel:
+                    id: funcao_user
+                    text: "Cliente"
+                    bold: True
+                    font_size: "22"
+                    halign: "center"
+                    valign: "center"
+                    pos_hint: {"center_x": 0.5, "center_y": 0.4}
+
+                MDFillRoundFlatButton:
+                    text: "seguinte"
+                    elavation: 1
+                    text_color: "black"
+                    size_hint: None, None
+                    size: "100dp", "45dp"
+                    pos_hint: {"center_x": 0.5, "center_y": 0.18}
+                    on_release: root.opc_login()
+                    
+                
+
+    
