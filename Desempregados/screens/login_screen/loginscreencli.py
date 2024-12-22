@@ -1,7 +1,10 @@
 from kivymd.uix.screen import MDScreen
-from kivymd.app import MDApp
 
 
 class LoginScreenCli(MDScreen):
-    def voltar(self):
-        pass
+    def opc_login(self):
+        self.manager.current = "#"
+
+
+    def back_choosescreen(self):
+        self.manager.current = "choose_screen"

@@ -15,9 +15,17 @@
                 pos_hint: {"center_x": 0.07, "center_y": 0.97}
                 on_release: root.back_login_emp()
 
+            MDRelativeLayout:
+                FitImage:
+                    id: img
+                    source: "img/inserir-img.png"
+                    size_hint: None, None
+                    size: dp(100), dp(100)
+                    pos_hint: {"center_x": 0.25, "center_y": 0.84}
+
             MDLabel:
                 id: NomeEmpresa
-                text: "Desempregados"
+                text: "Empresa"
                # halign: "left"
                 font_size: 22
                 bold: True
@@ -25,7 +33,7 @@
 
             MDLabel:
                 id: NumeroEmpresa
-                text: "929355954"
+                text: "Telefone"
                # halign: "left"
                 font_size: 16
                 bold: False
@@ -33,7 +41,7 @@
 
             MDLabel:
                 id: Cidade
-                text: "Angola / Luanda"
+                text: "Cidade"
                # halign: "left"
                 font_size: 16
                 bold: False
@@ -41,7 +49,7 @@
 
             MDLabel:
                 id: Area
-                text: "Area de TI"
+                text: "Area"
                # halign: "left"
                 font_size: 16
                 bold: False
@@ -49,7 +57,7 @@
 
             MDLabel:
                 id: EmailEmpresa
-                text: "Desempregados@gmail.com"
+                text: "Email"
                # halign: "left"
                 font_size: 16
                 bold: False
