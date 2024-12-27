@@ -16,17 +16,26 @@
                 on_release: root.back_choosescreen()
 
         MDLabel:
-            text: "Torna-te um \nFuncionário \nAgora."
-            halign: "left"
+            text: "Login"
+            halign: "center"
             bold: True
-            font_size: "44"
-            pos_hint: {"center_x": 0.55, "center_y": 0.8}
+            theme_text_color: "Primary"
+            font_size: "27"
+            pos_hint: {"center_x": 0.5, "center_y": 0.88}
+
+        MDTextField: 
+            hint_text: "Nome Completo"
+            mode: "rectangle"
+            icon_right: "account"
+            pos_hint: {"center_x": 0.5, "center_y": 0.73}
+            size_hint: 0.9, None
+            height: 50
 
         MDTextField: 
             hint_text: "Email"
             mode: "rectangle"
             icon_right: "email"
-            pos_hint: {"center_x": 0.5, "center_y": 0.6}
+            pos_hint: {"center_x": 0.5, "center_y": 0.62}
             size_hint: 0.9, None
             height: 50
 
@@ -35,7 +44,7 @@
             mode: "rectangle"
             text_color: app.theme_cls.primary_color 
             icon_right: "lock"
-            pos_hint: {"center_x": 0.5, "center_y": 0.49}
+            pos_hint: {"center_x": 0.5, "center_y": 0.51}
             size_hint: 0.9, None
             height: 50
             fill_color: 1, 1, 1, 1
@@ -46,10 +55,11 @@
             elavation: 1
             text_color: "black"
             size_hint: 0.9, None
-            pos_hint: {"center_x": 0.5, "center_y": 0.38}
+            pos_hint: {"center_x": 0.5, "center_y": 0.40}
+            on_release: root.opc_login()
 
         MDLabel:
-            text: " Entrar com conta Google"
+            text: " Entrar com Google"
             halign: "center"
             font_size: "16"
             pos_hint: {"center_x": 0.5, "center_y": 0.30}
