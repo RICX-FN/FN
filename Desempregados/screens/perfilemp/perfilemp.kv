@@ -18,15 +18,14 @@
             MDRelativeLayout:
                 FitImage:
                     id: img
-                    source: "img/inserir-img.png"
+                    source: "img/empresa.png"
                     size_hint: None, None
-                    size: dp(100), dp(100)
-                    pos_hint: {"center_x": 0.25, "center_y": 0.84}
+                    size: dp(110), dp(110)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.84}
 
             MDLabel:
                 id: NomeEmpresa
-                text: "Empresa"
-               # halign: "left"
+                text: "Empresa".upper()
                 font_size: 22
                 bold: True
                 pos_hint: {"center_x": 0.95, "center_y": 0.9}
@@ -34,7 +33,6 @@
             MDLabel:
                 id: NumeroEmpresa
                 text: "Telefone"
-               # halign: "left"
                 font_size: 16
                 bold: False
                 pos_hint: {"center_x": 0.95, "center_y": 0.86}
@@ -42,7 +40,6 @@
             MDLabel:
                 id: Cidade
                 text: "Cidade"
-               # halign: "left"
                 font_size: 16
                 bold: False
                 pos_hint: {"center_x": 0.95, "center_y": 0.83}
@@ -50,7 +47,6 @@
             MDLabel:
                 id: Area
                 text: "Area"
-               # halign: "left"
                 font_size: 16
                 bold: False
                 pos_hint: {"center_x": 0.95, "center_y": 0.80}
@@ -58,7 +54,6 @@
             MDLabel:
                 id: EmailEmpresa
                 text: "Email"
-               # halign: "left"
                 font_size: 16
                 bold: False
                 pos_hint: {"center_x": 0.95, "center_y": 0.77}

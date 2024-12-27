@@ -15,12 +15,21 @@
                 pos_hint: {"center_x": 0.07, "center_y": 0.97}
                 on_release: root.back_choosescreen()
 
+            MDRelativeLayout:
+                FitImage:
+                    id: img
+                    source: "img/emp-login.png"
+                    size_hint: None, None
+                    size: dp(200), dp(150)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.81}
+
         MDLabel:
-            text: "Encontre\nOs melhores\nFuncionários."
-            halign: "left"
+            text: "Login"
+            halign: "center"
             bold: True
-            font_size: "44"
-            pos_hint: {"center_x": 0.55, "center_y": 0.8}
+            theme_text_color: "Primary"
+            font_size: "24"
+            pos_hint: {"center_x": 0.5, "center_y": 0.68}
 
         MDTextField: 
             hint_text: "Nome da Empresa"

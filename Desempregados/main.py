@@ -44,7 +44,7 @@ class LiveApp(MDApp, App):
     def build_app(self):
 
         #thema dark definido com padrão
-        self.theme_cls.theme_style = "Dark"
+        self.theme_cls.theme_style = "Light"
 
         self.theme_cls.primary_palette = "Orange"
         #intensidade das cores primarias
