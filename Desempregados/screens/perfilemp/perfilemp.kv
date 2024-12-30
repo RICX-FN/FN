@@ -18,52 +18,36 @@
             MDRelativeLayout:
                 FitImage:
                     id: img
-                    source: "img/empresa.png"
+                    source: "img/fundo-img.jpg"
                     size_hint: None, None
-                    size: dp(110), dp(110)
+                    radius: dp(75)
+                    size: dp(121), dp(121)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.84}
+
+
+                FitImage:
+                    id: img
+                    source: "img/user.png"
+                    size_hint: None, None
+                    radius: dp(75)
+                    size: dp(120), dp(120)
                     pos_hint: {"center_x": 0.5, "center_y": 0.84}
 
             MDLabel:
                 id: NomeEmpresa
                 text: "Empresa".upper()
+                halign: "center"
                 font_size: 22
                 bold: True
-                pos_hint: {"center_x": 0.95, "center_y": 0.9}
-
-            MDLabel:
-                id: NumeroEmpresa
-                text: "Telefone"
-                font_size: 16
-                bold: False
-                pos_hint: {"center_x": 0.95, "center_y": 0.86}
-
-            MDLabel:
-                id: Cidade
-                text: "Cidade"
-                font_size: 16
-                bold: False
-                pos_hint: {"center_x": 0.95, "center_y": 0.83}
-
-            MDLabel:
-                id: Area
-                text: "Area"
-                font_size: 16
-                bold: False
-                pos_hint: {"center_x": 0.95, "center_y": 0.80}
-
-            MDLabel:
-                id: EmailEmpresa
-                text: "Email"
-                font_size: 16
-                bold: False
-                pos_hint: {"center_x": 0.95, "center_y": 0.77}
+                pos_hint: {"center_x": 0.5, "center_y": 0.71}
 
             MDFillRoundFlatButton:
-                text: "Editar perfil"
-                font_size: "20"
+                text: "Editar Perfil"
+                font_size: "18"
                 elavation: 1
                 text_color: "black"
-                size_hint: 0.9, 0
-                pos_hint: {"center_x": 0.5, "center_y": 0.7}
+                size_hint: 0.9, None
+                pos_hint: {"center_x": 0.5, "center_y": 0.65}
                 on_release: #root.opc_edit_perfil()
+
 
