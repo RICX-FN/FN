@@ -12,9 +12,10 @@
                 halign: "left"
                 size_hint: None, None
                 size: "50dp", "50dp"
-                pos_hint: {"center_x": 0.07, "center_y": 0.97}
+                pos_hint: {"center_x": 0.07, "center_y": 0.94}
                 on_release: root.back_login_emp()
 
+            # fundo da img de perfil
             MDRelativeLayout:
                 FitImage:
                     id: img
@@ -24,7 +25,7 @@
                     size: dp(121), dp(121)
                     pos_hint: {"center_x": 0.5, "center_y": 0.84}
 
-
+                # img de perfil
                 FitImage:
                     id: img
                     source: "img/user.png"
@@ -33,21 +34,75 @@
                     size: dp(120), dp(120)
                     pos_hint: {"center_x": 0.5, "center_y": 0.84}
 
+                # fundo usado como form (box-content)
+                #FitImage:
+                    #id: img
+                    #source: "img/fundo-img.jpg"
+                    #size_hint: (0.9, None)
+                    #radius: dp(10)
+                    #size: dp(268), dp(180)
+                    #pos_hint: {"center_x": 0.5, "center_y": 0.39}
+
             MDLabel:
                 id: NomeEmpresa
+                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
                 text: "Empresa".upper()
                 halign: "center"
                 font_size: 22
-                bold: True
+                bold: False
                 pos_hint: {"center_x": 0.5, "center_y": 0.71}
 
             MDFillRoundFlatButton:
                 text: "Editar Perfil"
+                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
+                font_size: "18"
+                elavation: 1
+                md_bg_color: 0.9, 0.9, 0.9, 1
+                text_color: "black"
+                size_hint: 0.9, None
+                pos_hint: {"center_x": 0.5, "center_y": 0.64}
+                on_release: #root.opc_edit_perfil()
+
+            MDLabel:
+                text: "Modelo Curriculum Vitae"
+                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
+                halign: "center"
+                font_size: 20
+                bold: False
+                pos_hint: {"center_x": 0.5, "center_y": 0.57}
+
+            MDFillRoundFlatButton:
+                text: "Processar"
+                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
+                icon_right: "email"
                 font_size: "18"
                 elavation: 1
                 text_color: "black"
-                size_hint: 0.9, None
-                pos_hint: {"center_x": 0.5, "center_y": 0.65}
+                size_hint: 0.4, None
+                pos_hint: {"center_x": 0.5, "center_y": 0.28}
                 on_release: #root.opc_edit_perfil()
 
+            MDTextField: 
+                hint_text: "Descrição"
+                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
+                mode: "rectangle"
+                multiline: True
+                pos_hint: {"center_x": 0.5, "center_y": 0.47}
+                size_hint: 0.85, 0.15
+                color: "black"
+                height: 50
 
+            MDLabel:
+                text: "carregar cv"
+                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
+                halign: "center"
+                font_size: 20
+                bold: False
+                pos_hint: {"center_x": 0.5, "center_y": 0.35} 
+
+            MDIconButton:
+                icon: "plus"
+                size_hint: None, None
+                size: "50dp", "50dp"
+                pos_hint: {"center_x": 0.87, "center_y": 0.35}
+                on_release: 

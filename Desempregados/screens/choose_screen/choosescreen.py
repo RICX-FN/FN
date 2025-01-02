@@ -1,4 +1,6 @@
 from kivymd.uix.screen import MDScreen
+from kivy.lang import Builder
+from kivy.animation import Animation
 
 
 class ChooseScreen(MDScreen):
@@ -39,3 +41,5 @@ class ChooseScreen(MDScreen):
             self.manager.current = "login_screen_cli"
         elif self.ids.funcao_user.text == "Empresa":
             self.manager.current = "login_screen_emp"
+
+ 
