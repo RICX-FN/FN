@@ -19,6 +19,14 @@
             MDRelativeLayout:
                 FitImage:
                     id: img
+                    source: "img/header.jpg"
+                    size_hint: 1, None
+                    radius: dp(30)
+                    size: dp(700), dp(400)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.90}
+
+                FitImage:
+                    id: img
                     source: "img/fundo-img.jpg"
                     size_hint: None, None
                     radius: dp(75)
@@ -33,15 +41,24 @@
                     radius: dp(75)
                     size: dp(120), dp(120)
                     pos_hint: {"center_x": 0.5, "center_y": 0.84}
+                    
 
                 # fundo usado como form (box-content)
-                #FitImage:
-                    #id: img
-                    #source: "img/fundo-img.jpg"
-                    #size_hint: (0.9, None)
-                    #radius: dp(10)
-                    #size: dp(268), dp(180)
-                    #pos_hint: {"center_x": 0.5, "center_y": 0.39}
+                FitImage:
+                    id: img
+                    source: "img/fundo-img.jpg"
+                    size_hint: (0.9, None)
+                    radius: dp(30)
+                    size: dp(240), dp(60)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.32}
+
+                FitImage:
+                    id: img
+                    source: "img/pdf.png"
+                    size_hint: (None, None)
+                    radius: dp(75)
+                    size: dp(50), dp(50)
+                    pos_hint: {"center_x": 0.16, "center_y": 0.32}
 
             MDLabel:
                 id: NomeEmpresa
@@ -64,12 +81,38 @@
                 on_release: #root.opc_edit_perfil()
 
             MDLabel:
-                text: "Modelo Curriculum Vitae"
+                #text: "Modelo Curriculum"
                 font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
                 halign: "center"
                 font_size: 20
                 bold: False
                 pos_hint: {"center_x": 0.5, "center_y": 0.57}
+
+            MDTextField: 
+                hint_text: "Descrição"
+                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
+                mode: "rectangle"
+                multiline: True
+                pos_hint: {"center_x": 0.5, "center_y": 0.47}
+                size_hint: 0.9, 0.15
+                color: "black"
+                height: 50
+
+            MDLabel:
+                text: "faça upload do seu\n modelo de Curriculum Vitae"
+                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
+                halign: "center"
+                font_size: 16
+                bold: False
+                size_hint: 0.9, None
+                pos_hint: {"center_x": 0.5, "center_y": 0.32} 
+
+            MDIconButton:
+                icon: "plus"
+                size_hint: None, None
+                size: "50dp", "50dp"
+                pos_hint: {"center_x": 0.85, "center_y": 0.32}
+                on_release: 
 
             MDFillRoundFlatButton:
                 text: "Processar"
@@ -79,30 +122,5 @@
                 elavation: 1
                 text_color: "black"
                 size_hint: 0.4, None
-                pos_hint: {"center_x": 0.5, "center_y": 0.28}
+                pos_hint: {"center_x": 0.5, "center_y": 0.22}
                 on_release: #root.opc_edit_perfil()
-
-            MDTextField: 
-                hint_text: "Descrição"
-                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
-                mode: "rectangle"
-                multiline: True
-                pos_hint: {"center_x": 0.5, "center_y": 0.47}
-                size_hint: 0.85, 0.15
-                color: "black"
-                height: 50
-
-            MDLabel:
-                text: "carregar cv"
-                font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
-                halign: "center"
-                font_size: 20
-                bold: False
-                pos_hint: {"center_x": 0.5, "center_y": 0.35} 
-
-            MDIconButton:
-                icon: "plus"
-                size_hint: None, None
-                size: "50dp", "50dp"
-                pos_hint: {"center_x": 0.87, "center_y": 0.35}
-                on_release: 
