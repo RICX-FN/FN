@@ -7,31 +7,25 @@
                 size: self.size
 
         MDRelativeLayout:
-            MDIconButton:
-                icon: "chevron-left"
-                halign: "left"
-                size_hint: None, None
-                size: "50dp", "50dp"
-                pos_hint: {"center_x": 0.07, "center_y": 0.94}
-                on_release: root.back_login_emp()
 
             # fundo da img de perfil
             MDRelativeLayout:
                 FitImage:
                     id: img
-                    source: "img/header.jpg"
+                    source: "img/fundo-img.jpg"
                     size_hint: 1, None
-                    radius: dp(30)
-                    size: dp(700), dp(400)
-                    pos_hint: {"center_x": 0.5, "center_y": 0.90}
+                    radius: dp(15)
+                    size: dp(400), dp(400)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.92}
 
                 FitImage:
                     id: img
-                    source: "img/fundo-img.jpg"
+                    source: "img/fundo.jpeg"
                     size_hint: None, None
                     radius: dp(75)
                     size: dp(121), dp(121)
                     pos_hint: {"center_x": 0.5, "center_y": 0.84}
+
 
                 # img de perfil
                 FitImage:
@@ -48,17 +42,25 @@
                     id: img
                     source: "img/fundo-img.jpg"
                     size_hint: (0.9, None)
-                    radius: dp(30)
+                    radius: dp(10)
                     size: dp(240), dp(60)
-                    pos_hint: {"center_x": 0.5, "center_y": 0.32}
+                    pos_hint: {"center_x": 0.5, "center_y": 0.36}
 
                 FitImage:
                     id: img
-                    source: "img/pdf.png"
+                    source: "img/carregar-arquivo.png"
                     size_hint: (None, None)
-                    radius: dp(75)
-                    size: dp(50), dp(50)
-                    pos_hint: {"center_x": 0.16, "center_y": 0.32}
+                    radius: dp(10)
+                    size: dp(40), dp(40)
+                    pos_hint: {"center_x": 0.16, "center_y": 0.36}
+
+            MDIconButton:
+                icon: "chevron-left"
+                halign: "left"
+                size_hint: None, None
+                size: "50dp", "50dp"
+                pos_hint: {"center_x": 0.07, "center_y": 0.94}
+                on_release: root.back_login_emp()
 
             MDLabel:
                 id: NomeEmpresa
@@ -74,11 +76,18 @@
                 font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
                 font_size: "18"
                 elavation: 1
-                md_bg_color: 0.9, 0.9, 0.9, 1
+                #md_bg_color: 0.9, 0.9, 0.9, 1
                 text_color: "black"
-                size_hint: 0.9, None
-                pos_hint: {"center_x": 0.5, "center_y": 0.64}
+                size_hint: 0.78, None
+                pos_hint: {"center_x": 0.43, "center_y": 0.65}
                 on_release: #root.opc_edit_perfil()
+
+            MDIconButton:
+                icon: "bell-outline"
+                size_hint: None, None
+                size: "70dp", "70dp"
+                pos_hint: {"center_x": 0.9, "center_y": 0.65}
+                on_release:
 
             MDLabel:
                 #text: "Modelo Curriculum"
@@ -86,32 +95,32 @@
                 halign: "center"
                 font_size: 20
                 bold: False
-                pos_hint: {"center_x": 0.5, "center_y": 0.57}
+                pos_hint: {"center_x": 0.5, "center_y": 0.58}
 
             MDTextField: 
                 hint_text: "Descrição"
                 font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
                 mode: "rectangle"
                 multiline: True
-                pos_hint: {"center_x": 0.5, "center_y": 0.47}
+                pos_hint: {"center_x": 0.5, "center_y": 0.52}
                 size_hint: 0.9, 0.15
                 color: "black"
                 height: 50
 
             MDLabel:
-                text: "faça upload do seu\n modelo de Curriculum Vitae"
+                text: "faça upload do seu \nmodelo de Curriculum Vitae"
                 font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
                 halign: "center"
                 font_size: 16
                 bold: False
                 size_hint: 0.9, None
-                pos_hint: {"center_x": 0.5, "center_y": 0.32} 
+                pos_hint: {"center_x": 0.51, "center_y": 0.36} 
 
             MDIconButton:
                 icon: "plus"
                 size_hint: None, None
                 size: "50dp", "50dp"
-                pos_hint: {"center_x": 0.85, "center_y": 0.32}
+                pos_hint: {"center_x": 0.85, "center_y": 0.36}
                 on_release: 
 
             MDFillRoundFlatButton:
@@ -122,5 +131,5 @@
                 elavation: 1
                 text_color: "black"
                 size_hint: 0.4, None
-                pos_hint: {"center_x": 0.5, "center_y": 0.22}
+                pos_hint: {"center_x": 0.5, "center_y": 0.26}
                 on_release: #root.opc_edit_perfil()
