@@ -7,7 +7,11 @@ from kivy.factory import Factory
 from screens.choose_screen.choosescreen import ChooseScreen
 from screens.login_screen.loginscreencli import LoginScreenCli
 from screens.login_screen.loginscreenemp import LoginScreenEmp
+from screens.login_screen.logincli import LoginCli
+from screens.login_screen.loginemp import LoginEmp
 from screens.perfilemp.perfilemp import PerfilEmp
+from screens.mainscreen.mainscreen import MainScreen
+
 
 
 # main app class for kaki app with kivymd modules
@@ -22,7 +26,10 @@ class LiveApp(MDApp, App):
         os.path.join(os.getcwd(), "screens/choose_screen/choosescreen.kv"),
         os.path.join(os.getcwd(), "screens/login_screen/loginscreencli.kv"),
         os.path.join(os.getcwd(), "screens/login_screen/loginscreenemp.kv"),
+        os.path.join(os.getcwd(), "screens/login_screen/logincli.kv"),
+        os.path.join(os.getcwd(), "screens/login_screen/loginemp.kv"),
         os.path.join(os.getcwd(), "screens/perfilemp/perfilemp.kv"),
+        os.path.join(os.getcwd(), "screens/mainscreen/mainscreen.kv"),
         
     }
 
@@ -32,7 +39,10 @@ class LiveApp(MDApp, App):
         "ChooseScreen": "screens.choose_screen.choosescreen",
         "LoginScreenCli": "screens.login_screen.loginscreencli",
         "LoginScreenEmp": "screens.login_screen.loginscreenemp",
+        "LoginCli": "screens.login_screen.logincli",
+        "LoginEmp": "screens.login_screen.loginemp",
         "PerfilEmp": "screens.perfilemp.perfilemp",
+        "MainScreen": "screens.mainscreen.mainscreen",
     }
 
     # auto reload path
@@ -55,7 +65,10 @@ class LiveApp(MDApp, App):
         self.screen_manager.add_widget(ChooseScreen(name="choose_screen"))
         self.screen_manager.add_widget(LoginScreenCli(name="login_screen_cli"))
         self.screen_manager.add_widget(LoginScreenEmp(name="login_screen_emp"))
+        self.screen_manager.add_widget(LoginCli(name="login_cli"))
+        self.screen_manager.add_widget(LoginEmp(name="login_emp"))
         self.screen_manager.add_widget(PerfilEmp(name="perfil_emp"))
+        self.screen_manager.add_widget(MainScreen(name="main_screen"))
 
         return self.screen_manager
 

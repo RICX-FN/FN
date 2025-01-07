@@ -1,4 +1,4 @@
-<LoginScreenCli>
+<LoginEmp>
     MDFloatLayout:
         padding: 5
         canvas.before:
@@ -16,28 +16,19 @@
                 on_release: root.back_choosescreen()
 
         MDLabel:
-            text: "Cadastre-se"
+            text: "Login"
             halign: "center"
             bold: True
             theme_text_color: "Primary"
             font_size: "27"
             pos_hint: {"center_x": 0.5, "center_y": 0.85}
-
-        MDTextField: 
-            hint_text: "Nome Completo"
-            font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
-            mode: "rectangle"
-            icon_right: "account"
-            pos_hint: {"center_x": 0.5, "center_y": 0.70}
-            size_hint: 0.9, None
-            height: 50
-
+            
         MDTextField: 
             hint_text: "Email"
             font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
             mode: "rectangle"
             icon_right: "email"
-            pos_hint: {"center_x": 0.5, "center_y": 0.59}
+            pos_hint: {"center_x": 0.5, "center_y": 0.70}
             size_hint: 0.9, None
             height: 50
 
@@ -48,7 +39,7 @@
             text_color: app.theme_cls.primary_color 
             password: True
             icon_right: "lock"
-            pos_hint: {"center_x": 0.5, "center_y": 0.48}
+            pos_hint: {"center_x": 0.5, "center_y": 0.59}
             size_hint: 0.9, None
             height: 50
             fill_color: 1, 1, 1, 1
@@ -57,28 +48,8 @@
         MDFillRoundFlatButton:
             text: "Conecte-se"
             font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Light.ttf"
-            font_size: 16
+            font_size: 18
             text_color: "black"
             size_hint: 0.9, None
-            pos_hint: {"center_x": 0.5, "center_y": 0.37}
+            pos_hint: {"center_x": 0.5, "center_y": 0.47}
             on_release: root.opc_login()
-
-        MDLabel:
-            text: "Já possui uma conta?"
-            halign: "left"
-            bold: False
-            theme_text_color: "Primary"
-            font_size: "14"
-            pos_hint: {"center_x": 0.55, "center_y": 0.30}
-
-        MDFillRoundFlatButton:
-            text: "Faça login"
-            font_name: "fonts\Kanit_PT_Serif_Roboto\Roboto\Roboto-Regular.ttf"
-            font_size: 14
-            text_color: "blue"
-            md_bg_color: 0, 0, 0, 0  # Fundo completamente transparente
-            ripple_behavior: False  # Remove o efeito de onda ao pressionar
-            hover_behavior: False  # Desativa o efeito ao passar o mouse (no desktop)
-            size_hint: 0.3, None
-            pos_hint: {"center_x": 0.47, "center_y": 0.30}
-            on_release: root.login()
