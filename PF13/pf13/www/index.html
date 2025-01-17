@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleção Inicial</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="Aplicativo">
+      <button class="botão-aviso" onclick="toggleInfo()">&#9432;</button>
+
+    <div id="caixa-aviso" class="caixa-aviso grande">
+      <p>Aplicativo para todos os pobres, Proibido Pobre nível Esivayo, aqui não entra!.</p>
+    </div>
+
+    <div class="conteudo">
+        <h2>Seja bem-vindo(a)</h2>
+        <div class="navegacao">
+          <button class="seta esquerda" onclick="navigate('esquerda')">&#9664;</button>
+          <div class="display">
+            <img id="displayImage" src="img/Cliente.png" alt="Cliente">
+            <p id="displayText">Cliente</p>
+          </div>
+          <button class="seta direita" onclick="navigate('direita')">&#9654;</button>
+        </div>
+        <button class="botão-confirmação" onclick="confirmSelection()">Seguinte</button>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+  </html>
