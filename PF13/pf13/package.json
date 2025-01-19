@@ -19,5 +19,8 @@
   },
   "devDependencies": {
     "cordova-android": "^13.0.0"
+  },
+  "dependencies": {
+    "cordova-plugin-livereload": "^1.2.2"
   }
 }

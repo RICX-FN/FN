@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
   <title>Seleção Inicial</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <div class="Aplicativo">
-      <button class="botão-aviso" onclick="toggleInfo()">&#9432;</button>
+    <button class="botão-aviso" onclick="toggleInfo()">&#9432;</button>
 
     <div id="caixa-aviso" class="caixa-aviso grande">
-      <p>Aplicativo para todos os pobres, Proibido Pobre nível Esivayo, aqui não entra!.</p>
+      <p>App criado com objectivo de ajudar na recruta e seleção de novos      trabalhadores para sua Empresa ou gerar
+        oportunidades de empregação.</p>
     </div>
 
     <div class="conteudo">
-        <h2>Seja bem-vindo(a)</h2>
-        <div class="navegacao">
-          <button class="seta esquerda" onclick="navigate('esquerda')">&#9664;</button>
-          <div class="display">
-            <img id="displayImage" src="img/Cliente.png" alt="Cliente">
-            <p id="displayText">Cliente</p>
-          </div>
-          <button class="seta direita" onclick="navigate('direita')">&#9654;</button>
+      <h2>Seja bem-vindo</h2>
+      <div class="navegacao">
+        <button class="seta esquerda" onclick="navigate('esquerda')">&#9664;</button>
+        <div class="display">
+          <img id="displayImage" src="img/Cliente.png" alt="Cliente">
+          <p id="displayText">Cliente</p>
         </div>
-        <button class="botão-confirmação" onclick="confirmSelection()">Seguinte</button>
+        <button class="seta direita" onclick="navigate('direita')">&#9654;</button>
       </div>
+      <button class="botão-confirmação" onclick="confirmSelection()">Seguinte</button>
     </div>
-    <script src="js/index.js"></script>
-  </body>
-  </html>
+  </div>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
