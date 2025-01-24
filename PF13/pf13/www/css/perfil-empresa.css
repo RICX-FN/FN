@@ -7,7 +7,8 @@
 }
 
 /* Configuração estática baseada em 1080x1920 */
-html, body {
+html,
+body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -16,8 +17,6 @@ html, body {
     justify-content: center;
     align-items: center;
 }
-
-
 
 /* Cabeçalho */
 header {
@@ -28,14 +27,16 @@ header {
 }
 
 .logo {
-    width: 30vw; /* Proporcional à largura */
-    height: 30vw; 
+    width: 35vw;
+    /* Proporcional à largura */
+    height: 35vw;
     border-radius: 50%;
-    margin-bottom: 0vh;
+    margin-bottom: 1vh;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-    font-size: 1.4vw;
+    font-size: 6vw;
     color: #333;
     margin-bottom: 1vh;
 }
@@ -47,18 +48,26 @@ h2 {
 }
 
 .editar-perfil {
-    background: #f9a825;
-    color: #fff;
+    background: #bfbebe;
+    color: #000000;
     border: none;
-    padding: 0.4vw 1.04vw;
-    border-radius: 1.04vw;
+    padding: 2vw 15vw;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 0.9vw;
+    font-size: 4vw;
+    margin-bottom: 2.5vh;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.editar-perfil:hover {
+    background: #969696;
 }
 
 .notificacoes svg {
-    width: 2.08vw;
-    height: 2.08vw;
+    margin-bottom: 2.5vh;
+    margin-left: 1vh;
+    width: 7vw;
+    height: 7vw;
     color: #666;
 }
 
@@ -66,13 +75,22 @@ h2 {
 form input,
 form textarea {
     width: 100%;
-    padding: 0.52vw;
+    text-align: left;
+    padding: 2vw;
+    border-radius: 10px;
     margin-bottom: 1.5vh;
-    border: 0.1vw solid #333; /* Bordas pretas para visibilidade */
-    border-radius: 0.26vw;
-    font-size: 1vw;
+    height: 5vh;
+    border: 0.3vw solid #000000;
+    font-size: 4vw;
     color: #333;
     background: #f9f9f9;
+}
+
+.description {
+    height: 15vh;
+    resize: none;
+    margin-bottom: 6vh;
+    border-radius: 10px;
 }
 
 form .linha {
@@ -85,7 +103,7 @@ form .linha input {
 }
 
 textarea {
-    height: 10vh;
+    height: 15vh;
     resize: none;
 }
 
@@ -101,30 +119,36 @@ textarea {
     align-items: center;
     justify-content: center;
     gap: 0.52vw;
-    background: #6a4d26; /* Castanho */
-    color: #fff;
+    background: #bfbebe;
+    color: #000000;
     border: none;
-    padding: 0.52vw 1.04vw;
-    border-radius: 0.26vw;
-    font-size: 0.9vw;
+    padding: 2vw 15vw;
+    border-radius: 50px;
+    font-size: 3vw;
     cursor: pointer;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.carregar-cv:hover {
+    background: #969696;
 }
 
 .carregar-cv svg {
-    width: 1.56vw;
-    height: 1.56vw;
-    color: #fff;
+    width: 4vw;
+    height: 4vw;
+    color: #000000;
 }
 
 .publicar {
     width: 100%;
-    background: #f9a825;
-    color: #fff;
+    background: orange;
+    color: #000000;
     border: none;
-    padding: 0.52vw;
-    border-radius: 0.26vw;
-    font-size: 1vw;
+    padding: 2vw 35vw;
+    border-radius: 50px;
+    font-size: 4vw;
     cursor: pointer;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
 }
 
 .publicar:hover {
