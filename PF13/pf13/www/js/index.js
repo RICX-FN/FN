@@ -1,5 +1,5 @@
 const images = [
-  { src: "img/Cliente.png", text: "Cliente", redirect: "./screens/login_cliente.html" },
+  { src: "img/Cliente.png", text: "Funcionário", redirect: "./screens/login_cliente.html" },
   { src: "img/Empresa.png", text: "Empresa", redirect: "./screens/login_empresa.html" }
 ];
 

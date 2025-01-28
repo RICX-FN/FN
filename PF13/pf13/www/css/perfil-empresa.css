@@ -28,11 +28,10 @@ header {
 
 .logo {
     width: 35vw;
-    /* Proporcional à largura */
     height: 35vw;
     border-radius: 50%;
     margin-bottom: 1vh;
-    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
@@ -56,7 +55,7 @@ h2 {
     cursor: pointer;
     font-size: 4vw;
     margin-bottom: 2.5vh;
-    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .editar-perfil:hover {
@@ -126,7 +125,7 @@ textarea {
     border-radius: 50px;
     font-size: 3vw;
     cursor: pointer;
-    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .carregar-cv:hover {
@@ -148,7 +147,7 @@ textarea {
     border-radius: 50px;
     font-size: 4vw;
     cursor: pointer;
-    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .publicar:hover {

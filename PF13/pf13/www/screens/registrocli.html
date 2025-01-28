@@ -22,12 +22,12 @@
             <div class="input-box">
                 <span class="icon"><ion-icon name="person"></ion-icon></span>
                 <input type="name" id="nome-reg-cliente" class="form-input" required>
-                <label>Nome Completo</label>
+                <label data-label="Nome Completo">Nome Completo</label>
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail"></ion-icon></span>
                 <input type="email" id="email-reg-cliente" class="form-input" required>
-                <label>Email</label>
+                <label data-label="Email">Email</label>
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
@@ -35,7 +35,8 @@
                 <label>Palavra-passe</label>
             </div>
 
-            <a href="./login_cliente.html" class="btn-cadastro">Cadastrar</a>
+            <button type="submit" class="btn-cadastro">Cadastrar</button>
+
         </form>
         <div class="inscricao">
             <p>Tem uma conta? <a href="./login_cliente.html">Conecte-se</a></p>
@@ -44,6 +45,7 @@
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../js/registrocliente.js"></script>
 </body>
 
 </html>

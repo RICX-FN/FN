@@ -10,7 +10,7 @@ document.addEventListener('deviceready', function() {
             senha TEXT NOT NULL
         )`);
 
-        // Criação da tabela de empresas
+        // Criação da tabela de empresa
         tx.executeSql(`CREATE TABLE IF NOT EXISTS empresas (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nome_empresa TEXT NOT NULL,
