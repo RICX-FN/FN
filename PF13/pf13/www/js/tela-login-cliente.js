@@ -1,20 +1,16 @@
-document.querySelector("form").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Evita que a página recarregue ao enviar o formulário
-
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
     const emailInput = document.getElementById("email-cliente");
-    const senhaInput = document.getElementById("password-cliente");
-    const email = emailInput.value.trim();
-    const senha = senhaInput.value.trim();
+    const passwordInput = document.getElementById("password-cliente");
 
-    // Função para exibir mensagens de erro e mudar a cor da label
+    // Função para exibir erro e mudar cor da label para vermelho
     const showError = (input, message) => {
-        const inputBox = input.parentElement; // Seleciona o div da classe .input-box
+        const inputBox = input.parentElement;
         inputBox.classList.add("error");
 
-        // Altera a cor da label para indicar erro
         const label = inputBox.querySelector("label");
         if (label) {
-            label.style.color = "red"; // Muda a cor da label para vermelho
+            label.style.color = "red";
         }
 
         let errorMessage = inputBox.querySelector(".error-message");
@@ -26,54 +22,66 @@ document.querySelector("form").addEventListener("submit", async function (event)
         errorMessage.textContent = message;
     };
 
-    // Função para limpar erro e restaurar cor da label
+    // Função para limpar erro e restaurar cor padrão da label
     const clearError = (input) => {
         const inputBox = input.parentElement;
         inputBox.classList.remove("error");
+
+        const label = inputBox.querySelector("label");
+        if (label) {
+            label.style.color = "";
+        }
 
         const errorMessage = inputBox.querySelector(".error-message");
         if (errorMessage) {
             inputBox.removeChild(errorMessage);
         }
-
-        const label = inputBox.querySelector("label");
-        if (label) {
-            label.style.color = ""; // Remove estilos inline
-        }
     };
 
-    // Limpa os erros antes de validar novamente
-    clearError(emailInput);
-    clearError(senhaInput);
+    // Validação do email (vazio e formato)
+    const validateEmail = () => {
+        const email = emailInput.value.trim();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    const conta = await buscarContaPorEmail(email);
-    if (!conta) {
-        showError(emailInput, "Este email não está cadastrado.");
-        return;
-    }
+        if (email === "") {
+            showError(emailInput, "O e-mail é obrigatório.");
+            return false;
+        } else if (!emailRegex.test(email)) {
+            showError(emailInput, "Insira um e-mail válido.");
+            return false;
+        }
+        clearError(emailInput);
+        return true;
+    };
 
-    const senhaCorreta = await verificarSenha(senha, conta.senhaHash);
-    if (!senhaCorreta) {
-        showError(senhaInput, "A palavra-passe não corresponde ao email informado.");
-        return;
-    }
+    // Validação da senha (apenas verificar se está vazia)
+    const validatePassword = () => {
+        const password = passwordInput.value.trim();
 
-    alert("Login realizado com sucesso!");
-    window.location.href = "#"; // Redireciona após login bem-sucedido
+        if (password === "") {
+            showError(passwordInput, "A senha é obrigatória.");
+            return false;
+        }
+        clearError(passwordInput);
+        return true;
+    };
+
+    // Eventos para validação em tempo real
+    emailInput.addEventListener("input", validateEmail);
+    passwordInput.addEventListener("input", validatePassword);
+
+    emailInput.addEventListener("blur", validateEmail);
+    passwordInput.addEventListener("blur", validatePassword);
+
+    // Evento de envio do formulário
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const isEmailValid = validateEmail();
+        const isPasswordValid = validatePassword();
+
+        if (isEmailValid && isPasswordValid) {
+            alert("Dados enviados para autenticação!");
+            form.submit(); // Enviar o formulário para o backend
+        }
+    });
 });
-
-// Simulação da função de busca no banco de dados (deve ser substituída por uma real)
-async function buscarContaPorEmail(email) {
-    // Simulando um banco de dados para teste
-    const usuariosDB = [
-        { email: "teste@email.com", senhaHash: "123456" },
-        { email: "usuario@email.com", senhaHash: "senha123" }
-    ];
-    
-    return usuariosDB.find(user => user.email === email) || null;
-}
-
-// Simulação da verificação de senha (deve ser substituída por um método seguro)
-async function verificarSenha(senhaDigitada, senhaHash) {
-    return senhaDigitada === senhaHash;
-}
