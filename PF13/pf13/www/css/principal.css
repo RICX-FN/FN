@@ -1,0 +1,96 @@
+/* Geral */
+* {
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    background: rgba(29, 31, 31, 0.097);
+    margin: 20px;
+}
+
+header {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    padding: 20px;
+}
+
+.barra-pesquisa {
+    border-radius: 50px;
+    border: none;
+    padding: 10px 40px;
+    position: fixed;
+}
+
+.icon-pesquisa {
+    background: transparent;
+    border: none;
+    font-size: 1.5em;
+    position: fixed;
+    margin-left: 77%;
+}
+
+main {
+    border-radius: 7px;
+    margin-top: 80px;
+    background-color: transparent;
+}
+
+.vaga-card {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.vaga-card p {
+    margin: 5px 0;
+}
+
+.vaga-card .btn-aplicar {
+    display: block;
+    width: 20%;
+    margin-top: 10px;
+    background-color: orange;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.vaga-card .btn-aplicar:hover {
+    background-color: #d1881f;
+}
+
+.btn-aplicar {
+    margin-left: 77%;
+    margin-bottom: 7px;
+    border-radius: 10px;
+    border: none;
+    background-color: orange;
+    padding: 10px 20px;
+    box-shadow: 0px 0px 2px 0.5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-upload {
+    background-color: rgba(39, 42, 42, 0.097);
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-upload:hover {
+    background-color: #0056b3;
+}
+
+.cv-nome {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #555;
+}
