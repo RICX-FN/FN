@@ -1,9 +1,9 @@
+// login empresa
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector("form");
     const emailInput = document.getElementById("email-empresa");
     const passwordInput = document.getElementById("password-empresa");
 
-    // Função para exibir erro e mudar cor da label para vermelho
     const showError = (input, message) => {
         const inputBox = input.parentElement;
         inputBox.classList.add("error");
@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
         errorMessage.textContent = message;
     };
 
-    // Função para limpar erro e restaurar cor padrão da label
     const clearError = (input) => {
         const inputBox = input.parentElement;
         inputBox.classList.remove("error");
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Validação do email (vazio e formato)
     const validateEmail = () => {
         const email = emailInput.value.trim();
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -54,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     };
 
-    // Validação da senha (apenas verificar se está vazia)
     const validatePassword = () => {
         const password = passwordInput.value.trim();
 
@@ -66,22 +63,53 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     };
 
-    // Eventos para validação em tempo real
+    const authenticateCompany = async (email, password) => {
+        try {
+            const response = await fetch("http://127.0.0.1:5000/login", { // URL de login unificada
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ 
+                    email: email, 
+                    senha: password // Envia 'senha' para o backend
+                }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.erro || "Erro na requisição"); // Mensagem de erro unificada
+            }
+
+            const data = await response.json();
+            if (data.mensagem === "Login bem-sucedido!") { // Verifica a mensagem de sucesso
+                alert("Login da empresa bem-sucedido!");
+                window.location.href = "./perfil-empresa.html";
+            } else {
+                showError(passwordInput, data.erro || "E-mail ou senha inválidos."); // Mensagem de erro unificada
+            }
+        } catch (error) {
+            console.error("Erro ao autenticar a empresa:", error);
+            showError(passwordInput, error.message || "Erro ao tentar fazer login. Tente novamente.");
+        }
+    };
+
     emailInput.addEventListener("input", validateEmail);
     passwordInput.addEventListener("input", validatePassword);
 
     emailInput.addEventListener("blur", validateEmail);
     passwordInput.addEventListener("blur", validatePassword);
 
-    // Evento de envio do formulário
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         const isEmailValid = validateEmail();
         const isPasswordValid = validatePassword();
 
         if (isEmailValid && isPasswordValid) {
-            alert("Dados enviados para autenticação!");
-            form.submit(); // Enviar o formulário para o backend
+            const email = emailInput.value.trim();
+            const password = passwordInput.value.trim();
+            authenticateCompany(email, password);
         }
     });
 });
+

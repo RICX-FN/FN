@@ -14,32 +14,29 @@
 </head>
 
 <body>
-
     <div class="login-box">
-        <form action="">
+        <form id="login-form">
             <h2>Conecte-se</h2>
             <h4>Encontre diversas oportunidades de emprego</h4>
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail"></ion-icon></span>
                 <input type="email" id="email-cliente" class="form-input" required>
-                <label>Email</label>
+                <label for="email-cliente">Email</label>
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                 <input type="password" id="password-cliente" class="form-input" required>
-                <label>Palavra-passe</label>
+                <label for="password-cliente">Palavra-passe</label>
             </div>
 
-            <button type="button" class="btn-login">
-                <a href="./principal.html">c</a>
-            </button>
+            <button type="submit" class="btn-login">Conectar</button>
             <div class="inscricao">
                 <p>Não tem uma conta? <a href="./registrocli.html">Cadastra-se</a></p>
             </div>
         </form>
     </div>
 
-   
+    <script src="../js/tela-login-cliente.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

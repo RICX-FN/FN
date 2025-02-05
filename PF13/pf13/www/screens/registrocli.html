@@ -14,25 +14,25 @@
 </head>
 
 <body>
-    <div class="rgistro-box">
+    <div class="registro-box">
 
-        <form action="">
+        <form id="form-cadastro">
             <h2>Cadastra-se</h2>
             <h4>Encontre diversas oportunidades de emprego</h4>
             <div class="input-box">
                 <span class="icon"><ion-icon name="person"></ion-icon></span>
-                <input type="name" id="nome-reg-cliente" class="form-input" required>
-                <label data-label="Nome Completo">Nome Completo</label>
+                <input id="nome-reg-cliente" type="text" class="form-input" required>
+                <label for="nome-reg-cliente">Nome Completo</label>
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="mail"></ion-icon></span>
                 <input type="email" id="email-reg-cliente" class="form-input" required>
-                <label data-label="Email">Email</label>
+                <label for="email-reg-cliente">Email</label>
             </div>
             <div class="input-box">
                 <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
                 <input type="password" id="password-reg-cliente" class="form-input" required>
-                <label>Palavra-passe</label>
+                <label for="password-reg-cliente">Palavra-passe</label>
             </div>
 
             <button type="submit" class="btn-cadastro">Cadastrar</button>
