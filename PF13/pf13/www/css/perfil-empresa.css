@@ -172,3 +172,16 @@ textarea {
     background-color: #FF4C4C;
     color: white;
 }
+
+
+#nome-arquivo-modelo-cv {
+    margin-top: 10px; /* Espaço entre o botão e o nome do arquivo */
+    font-size: 14px; /* Tamanho da fonte */
+    color: #777; /* Cor do texto */
+}
+
+.botoes {
+    display: flex; /* Alinha os elementos horizontalmente */
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+}
