@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const errorMessage = inputBox.querySelector(".error-message");
         if (errorMessage) {
-            inputBox.removeChild(errorMessage);
+            errorMessage.remove();
         }
     };
 
@@ -65,28 +65,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const authenticateCompany = async (email, password) => {
         try {
-            const response = await fetch("http://127.0.0.1:5000/login", { // URL de login unificada
+            const response = await fetch("http://127.0.0.1:5000/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ 
-                    email: email, 
-                    senha: password // Envia 'senha' para o backend
+                    email, 
+                    senha: password 
                 }),
             });
 
+            const data = await response.json();
+
             if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.erro || "Erro na requisição"); // Mensagem de erro unificada
+                throw new Error(data.erro || "Erro ao tentar fazer login. Tente novamente.");
             }
 
-            const data = await response.json();
-            if (data.mensagem === "Login bem-sucedido!") { // Verifica a mensagem de sucesso
+            if (data.mensagem === "Login bem-sucedido!") {
                 alert("Login da empresa bem-sucedido!");
+                localStorage.setItem("usuario_id", data.usuario_id);
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("tipo_usuario", data.tipo);
                 window.location.href = "./perfil-empresa.html";
             } else {
-                showError(passwordInput, data.erro || "E-mail ou senha inválidos."); // Mensagem de erro unificada
+                showError(passwordInput, data.erro || "E-mail ou senha inválidos.");
             }
         } catch (error) {
             console.error("Erro ao autenticar a empresa:", error);
@@ -112,4 +115,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-

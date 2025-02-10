@@ -122,7 +122,7 @@ h2 {
   height: 5vh;
   background: orange;
   border-radius: 40px;
-  border-color: rgba(29, 31, 31, 0.097);
+  border-color: transparent;
   cursor: pointer;
   font-size: 2vh;
   font-weight: 500;

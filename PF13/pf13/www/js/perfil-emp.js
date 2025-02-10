@@ -1,77 +1,88 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
     function mostrarMensagem(texto, tipo) {
         const msgDiv = document.getElementById("mensagem");
         msgDiv.textContent = texto;
-        msgDiv.className = "mensagem " + (tipo === "sucesso" ? "sucesso" : "erro");
+        msgDiv.className = `mensagem ${tipo === "sucesso" ? "sucesso" : "erro"}`;
         msgDiv.style.display = "block";
+        msgDiv.style.opacity = "1";
 
         setTimeout(() => {
-            msgDiv.style.display = "none"; // Esconder a mensagem após 3 segundos
+            msgDiv.style.opacity = "0"; // Suaviza a saída da mensagem
+            setTimeout(() => {
+                msgDiv.style.display = "none";
+            }, 500);
         }, 3000);
     }
 
-    let modeloCVCarregado = false; // Variável global para indicar se o currículo foi carregado
-    let nomeArquivoModeloCV = ""; // Variável para armazenar o nome do arquivo do modelo
+    let modeloCVCarregado = false;
+    let nomeArquivoModeloCV = "";
+    let carregandoArquivo = false; // Impede múltiplos uploads simultâneos
 
     document.querySelector(".carregar-cv").addEventListener("click", function () {
+        if (carregandoArquivo) {
+            mostrarMensagem("Aguarde o carregamento do arquivo anterior.", "erro");
+            return;
+        }
+
         let fileInput = document.createElement("input");
         fileInput.type = "file";
         fileInput.accept = ".pdf, .docx, .txt";
 
-        fileInput.addEventListener("change", function () {
+        fileInput.addEventListener("change", async function () {
             if (fileInput.files.length === 0) {
                 mostrarMensagem("Por favor, selecione um arquivo para upload.", "erro");
                 return;
             }
 
+            carregandoArquivo = true; // Bloqueia novos uploads até a conclusão
+
             let formData = new FormData();
             formData.append("modeloCV", fileInput.files[0]);
 
-            fetch("http://127.0.0.1:5000/upload_modelo_cv", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Resposta do servidor:", data);
-                
-                if (data.erro) {
-                    mostrarMensagem(data.erro, "erro"); // Exibe mensagens de erro do servidor
-                    return;
-                }
-                mostrarMensagem("Modelo de currículo carregado com sucesso!", "sucesso");
-                modeloCVCarregado = true; // Atualiza a variável para indicar que o currículo foi carregado
-                nomeArquivoModeloCV = fileInput.files[0].name; // Armazena o nome do arquivo
+            try {
+                const response = await fetch("http://127.0.0.1:5000/upload_modelo_cv", {
+                    method: "POST",
+                    body: formData,
+                });
 
-                // Exibe o nome do arquivo abaixo do botão "Carregar CV"
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.erro || "Erro ao enviar o arquivo.");
+                }
+
+                mostrarMensagem("Modelo de currículo carregado com sucesso!", "sucesso");
+                modeloCVCarregado = true;
+                nomeArquivoModeloCV = fileInput.files[0].name;
+
                 const nomeArquivoElemento = document.getElementById("nome-arquivo-modelo-cv");
                 if (nomeArquivoElemento) {
                     nomeArquivoElemento.textContent = nomeArquivoModeloCV;
                 } else {
                     console.error("Elemento com ID 'nome-arquivo-modelo-cv' não encontrado.");
                 }
-            })
-            .catch(error => {
+            } catch (error) {
                 console.error("Erro ao enviar o modelo de CV:", error);
-                mostrarMensagem("Erro ao carregar o currículo!", "erro");
-            });
+                mostrarMensagem(error.message || "Erro ao carregar o currículo!", "erro");
+            } finally {
+                carregandoArquivo = false; // Libera para novos uploads
+            }
         });
 
-        fileInput.click(); // Aciona o input de arquivo
+        fileInput.click();
     });
 
     document.getElementById("publicar-btn").addEventListener("click", function () {
-        const areaAtuacao = document.querySelector("input[placeholder='Área de atuação']").value;
-        const numeroVagas = document.querySelector("input[placeholder='Nº de Vagas']").value;
-        const data = document.querySelector("input[placeholder='Data']").value;
-        const descricao = document.querySelector(".description").value;
+        const areaAtuacao = document.querySelector("input[placeholder='Área de atuação']").value.trim();
+        const numeroVagas = document.querySelector("input[placeholder='Nº de Vagas']").value.trim();
+        const data = document.querySelector("input[placeholder='Data']").value.trim();
+        const descricao = document.querySelector(".description").value.trim();
 
         if (!areaAtuacao || !numeroVagas || !descricao || !data) {
             mostrarMensagem("Preencha todos os campos antes de publicar.", "erro");
             return;
         }
 
-        // Verifica se um currículo foi carregado
         if (!modeloCVCarregado) {
             mostrarMensagem("Por favor, carregue um currículo antes de publicar a vaga.", "erro");
             return;
@@ -82,13 +93,18 @@ document.addEventListener('DOMContentLoaded', function() {
             numeroVagas,
             data,
             descricao,
-            modeloCV: nomeArquivoModeloCV // Inclui o nome do arquivo do modelo na vaga
+            modeloCV: nomeArquivoModeloCV,
         };
 
-        const vagas = JSON.parse(localStorage.getItem("vagas")) || [];
-        vagas.push(vaga);
-        localStorage.setItem("vagas", JSON.stringify(vagas));
+        try {
+            const vagas = JSON.parse(localStorage.getItem("vagas")) || [];
+            vagas.push(vaga);
+            localStorage.setItem("vagas", JSON.stringify(vagas));
 
-        mostrarMensagem("Vaga publicada com sucesso!", "sucesso");
+            mostrarMensagem("Vaga publicada com sucesso!", "sucesso");
+        } catch (error) {
+            console.error("Erro ao salvar vaga:", error);
+            mostrarMensagem("Erro ao publicar a vaga. Tente novamente.", "erro");
+        }
     });
 });

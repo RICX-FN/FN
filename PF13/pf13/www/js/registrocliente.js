@@ -109,12 +109,14 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     nomeInput.addEventListener("input", validateNome);
-    emailInput.addEventListener("input", () => validateEmail());
-    senhaInput.addEventListener("input", validateSenha);
+    emailInput.addEventListener("input", validateEmail);
+    emailInput.addEventListener("blur", validateEmail);
+
 
     nomeInput.addEventListener("blur", validateNome);
-    emailInput.addEventListener("blur", () => validateEmail());
-    senhaInput.addEventListener("blur", validateSenha);
+    emailInput.addEventListener("input", validateEmail);
+    emailInput.addEventListener("blur", validateEmail);
+
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -134,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         nome: nomeInput.value.trim(),
                         email: emailInput.value.trim(),
                         senha: senhaInput.value.trim(),
+                        tipo: "cliente" // Ou obtenha dinamicamente
                     }),
                 });
 
