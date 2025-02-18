@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p><strong>Data:</strong> ${vaga.data}</p>
                 <p><strong>Descrição:</strong> ${vaga.descricao}</p>
                 <input type="file" class="input-cv" id="cv-${index}" accept=".pdf,.docx,.txt" hidden />
-                <button class="btn-upload" onclick="document.getElementById('cv-${index}').click()">📂 Selecionar Currículo</button>
+                <button class="btn-upload" onclick="document.getElementById('cv-${index}').click()">📄 Selecionar Currículo</button>
                 <span class="cv-nome" id="cv-nome-${index}">Nenhum arquivo selecionado</span>
                 <button class="btn-aplicar">Aplicar</button>
             `;

@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             formData.append("modeloCV", fileInput.files[0]);
 
             try {
-                const response = await fetch("http://127.0.0.1:5000/upload_modelo_cv", {
+                const response = await fetch("http://localhost:5000/upload_modelo_cv", {
                     method: "POST",
                     body: formData,
                 });

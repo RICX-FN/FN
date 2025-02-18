@@ -12,7 +12,7 @@ header {
     align-items: center;
     justify-content: space-between;
     display: flex;
-    padding: 20px;
+    padding: 20px;  
 }
 
 .barra-pesquisa {
@@ -74,7 +74,7 @@ main {
 }
 
 .btn-upload {
-    background-color: rgba(39, 42, 42, 0.097);
+    background-color: rgba(9, 44, 44, 0.097);
     color: black;
     border: none;
     padding: 8px 12px;
