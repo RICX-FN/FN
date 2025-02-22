@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="./img/FN.ico" type="image/x-icon">
+    <title>Portfólio Ricardo Bernardo</title>
+</head>
+
+<body>
+<div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Home</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/perfil-img.png" alt="foto de foto-perfil" class="foto-perfil">
+        <h1>Ricardo Bernardo</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front-end</p>
+    </main>
+
+    <section id="sobre" class="sebre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá, me chamo Ricardo Bernardo, sou desenvolvedor FrontEnd e estou em busca de novos desafios.
+                Atualmente estou cursando Análise e Desenvolvimento de Sistemas na Faculdade Impacta de Tecnologia.
+                Sou apaixonado por tecnologia e estou sempre em busca de novos conhecimentos.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./img/p-mobile.png" alt="projeto1" class="projeto-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Projeto Mobile com Cordova</h3>
+                    <p class="paragrafo-projeto">Uma app de recruta de funcionarios com IA, com intuito de abrangir o mercado de Recursos Humanos e deixar a produtividadde no topo.</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/p-mobile.png" alt="projeto1" class="projeto-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Projeto 2</h3>
+                    <p class="paragrafo-projeto">Descrição do projeto 2</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/p-mobile.png" alt="projeto1" class="projeto-imagem">
+                <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Projeto 3</h3>
+                    <p class="paragrafo-projeto">Descrição do projeto 3</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos" onsubmit="enviarMensagem(event)">
+        <h2 class="contato-titulo">Entra em Contacto</h2>
+
+            <form class="formulario-contato" id="formulario">
+                <div class="grupo-form">
+                    <input placeholder="Digite seu nome" class="campo-form" id="nome">
+                </div>
+
+                <div class="grupo-form">
+                    <textarea placeholder="Digite sua mensagem" class="campo-form" rows="4" id="mensagem"></textarea>
+                </div>
+
+                <button type="submit" class="botao-form">Enviar pelo WhatsApp</button>
+            </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
