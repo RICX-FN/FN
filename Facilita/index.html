@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilita - Serviços</title>
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="shortcut icon" href="assets/images/icons/favicon-Facilita.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header id="header">
+        <div class="header-content">
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="assets/pages/about.html">Sobre nós</a>
+                <a href="assets/pages/contact.html">Contate-nos</a>
+            </nav>
+            <div class="p-conteudo">
+                <h1>Bem-Vindo(a) ao <strong>Facilita</strong></h1>
+                <p>Sua ponte para informações claras, rápidas e confiáveis sobre<br> instituições em Angola. <br><br></p>
+                <p>Cansado de enfrentar filas, voltar para casa por falta de<br> documentosou ficar perdido sem saber o que levar?<br> O Facilita foi criado para si <br><br></p>
+                <p>Com o <strong>Facilita</strong>, você economiza tempo, evita surpresas <br> e ganha autonomia para resolver seus assuntos com mais segurança.</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="search-filter-container">
+        <section class="search-container">
+            <input type="text" id="searchInput" placeholder="Pesquisar Serviço..." class="search-input">
+        </section>
+
+        <section class="filter-container">
+            <select id="category" class="filter-select">
+                <option value="">Todas as categorias</option>
+                <option value="telecomunicações">Telecomunicações</option>
+                <option value="bancos">Bancos</option>
+                <option value="Serviços Empresariais">Empresariais</option>
+                <option value="Serviços governamentais">Governamentais</option>
+            </select>
+        </section>
+    </div>
+
+
+    <main class="card-container">
+        <div class="card" onclick="openEmpresa('assets/pages/unitel.html')" data-categoria="telecomunicações">
+            <img src="assets/images/Unitel-logo.png" alt="Unitel">
+            <h2>UNITEL</h2>
+        </div>
+        <div class="card" onclick="openEmpresa('assets/pages/banco-bai.html')" data-categoria="bancos">
+            <img src="assets/images/bai-logo.png" alt="Banco Bai">
+            <h2>BANCO BAI</h2>
+        </div>
+        <div class="card" onclick="openEmpresa('assets/pages/agt.html')" data-categoria="Serviços Empresariais">
+            <img src="assets/images/Agt-logo.png" alt="AGT">
+            <h2>AGT</h2>
+        </div>
+        <div class="card" onclick="openEmpresa('assets/pages/bi.html')" data-categoria="Serviços governamentais">
+            <img src="assets/images/BI-logo.png" alt="BI">
+            <h2>BILHETE (BI)</h2>
+        </div>
+        <div class="card" onclick="openEmpresa('assets/pages/passaporte.html')" data-categoria="Serviços governamentais">
+            <img src="assets/images/passaporte-logo.png" alt="Passaporte">
+            <h2>PASSAPORTE</h2>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Facilita. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

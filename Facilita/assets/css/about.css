@@ -1,0 +1,160 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: -webkit-linear-gradient(360deg, #81b4f7, #c4d5ff, #dde1ff);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(360deg, #81b4f7, #c4d5ff, #dde1ff);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background-color: #005cc5;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    nav {
+        display: flex;
+        gap: 30px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: lighter;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: #000000;
+        scale: 1.1;
+        transition: 0.3s ease;
+    }
+
+    .sobre-nos {
+        flex: 1;
+        background: linear-gradient(to bottom right, #b9c6ca, #ffffff);
+        padding: 100px 20px 80px;
+    }
+
+    .sobre-nos .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.401);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        transform: translateY(-20px);
+        transition: transform 0.3s ease;
+    }
+
+    .sobre-nos .container:hover {
+        transform: translateY(-30px);
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    .sobre-nos h2 {
+        font-size: 36px;
+        color: #005cc5;
+        margin-bottom: 20px;
+        border-left: 6px solid #005cc5;
+        padding-left: 15px;
+    }
+
+    .sobre-nos p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    .nossa-equipa {
+        background-color: #f5f7fa;
+        padding: 80px 20px 120px;
+        /* adiciona espaço extra no final para separar do footer */
+        text-align: center;
+    }
+
+    .nossa-equipa h2 {
+        font-size: 32px;
+        color: #005cc5;
+        margin-bottom: 50px;
+        border-left: 6px solid #005cc5;
+        padding-left: 15px;
+        display: inline-block;
+    }
+
+    .devs-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .dev-card {
+        background-color: rgba(255, 255, 255, 0.401);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 92, 197, 0.1);
+        max-width: 250px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .dev-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 16px 30px rgba(0, 92, 197, 0.2);
+    }
+
+    .dev-card img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+        border: 3px solid #005cc5;
+    }
+
+    .dev-card h3 {
+        color: #003366;
+        margin-bottom: 5px;
+    }
+
+    .dev-card .cargo {
+        color: #005cc5;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .dev-card p {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    footer {
+        padding: 1rem;
+        background-color: #005cc5;
+        color: white;
+        text-align: center;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
